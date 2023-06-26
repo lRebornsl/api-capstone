@@ -1,4 +1,5 @@
-$color: #ddd;
+$desire: #ef3f4a;
+$flashWhite: #eef4f4;
 
 /* Global */
 
@@ -7,8 +8,37 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-size: 1.6rem;
+}
+
 *, 
 *:before, 
 *:after {
   box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Utility */
+.container {
+  max-width: 144rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.p-fix {
+  position: fixed;
+}
+
+/* Footer */
+.footer {
+  background-color: $desire;
+  width: 100%;
+  bottom: 0;
+  color: $flashWhite;
 }
