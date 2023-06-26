@@ -12,9 +12,9 @@ body {
   font-size: 1.6rem;
 }
 
-*, 
-*:before, 
-*:after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -33,6 +33,34 @@ body {
 
 .p-fix {
   position: fixed;
+}
+
+// header
+
+.header {
+  border-bottom: 3px solid #000;
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 6rem;
+  }
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 4rem;
+}
+
+.navBar a {
+  text-decoration: none;
+}
+
+.header img {
+  content: url(./pics/logoPok.png);
 }
 
 /* Footer */
