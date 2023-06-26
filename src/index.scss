@@ -1,5 +1,6 @@
 $desire: #ef3f4a;
 $flashWhite: #eef4f4;
+$eerieBlack: #1d1d1b;
 
 /* Global */
 
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 *,
@@ -21,6 +22,11 @@ body {
 * {
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $flashWhite;
 }
 
 /* Utility */
@@ -35,28 +41,30 @@ body {
   position: fixed;
 }
 
-// header
+.hidden {
+  display: none;
+}
 
+/* header */
 .header {
-  border-bottom: 3px solid #000;
+  border-bottom: 0.3rem solid $eerieBlack;
+  background-color: $desire;
+  width: 100%;
 
   .container {
     display: flex;
     align-items: center;
-    flex-direction: row;
-    gap: 6rem;
+    justify-content: space-between;
   }
 }
 
 .navBar {
   display: flex;
-  flex-direction: row;
   list-style: none;
-  gap: 4rem;
-}
 
-.navBar a {
-  text-decoration: none;
+  li {
+    padding-left: 10rem;
+  }
 }
 
 .header img {
@@ -69,4 +77,5 @@ body {
   width: 100%;
   bottom: 0;
   color: $flashWhite;
+  border-top: 0.3rem solid $eerieBlack;
 }

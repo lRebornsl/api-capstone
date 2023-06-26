@@ -12,7 +12,7 @@ const liItem = (desc) => {
 
 const header = () => {
   const header = document.createElement('header');
-  header.className = 'header';
+  header.classList.add('header', 'p-fix');
   document.body.appendChild(header);
 
   const container = document.querySelector('.header');
