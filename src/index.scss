@@ -1,9 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/pocket-monk');
 $desire: #ef3f4a;
 $flashWhite: #eef4f4;
 $eerieBlack: #1d1d1b;
+$phillippine: #feca06;
+$ceruleanBlue: #265abe;
+$pocketMock: 'Pocket Monk', sans-serif;
 
 /* Global */
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -12,6 +15,7 @@ html {
 body {
   font-size: 1.8rem;
   background-color: $flashWhite;
+  font-family: $pocketMock;
 }
 
 *,
@@ -65,53 +69,79 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
 
-  img {
-    content: url(./assets/pokemon_logo.png);
-  }
+    img {
+      content: url(./assets/pokemon_logo.png);
+    }
 
-  .navBar {
-    display: flex;
-    list-style: none;
+    .navBar {
+      display: flex;
+      list-style: none;
 
-    li {
-      padding-left: 10rem;
+      li {
+        padding-left: 10rem;
+
+        a:hover {
+          color: $phillippine;
+          -webkit-text-stroke-width: 0.1rem;
+          -webkit-text-stroke-color: $ceruleanBlue;
+        }
+      }
     }
   }
 }
 
-
 /* Main */
 .main {
   .container {
-    padding: 8.6rem 0;
-  }
+    padding: 8.8rem 0 6.4rem 0;
 
-  .pokeImg {
-    justify-content: center;
-    align-items: center;
-    height: 11.7rem;
-    background-color: rgba(29, 29, 27, 0.8);
-    margin: 1rem 6rem;
-    border-radius: 1rem;
-  }
+    .card {
+      padding-bottom: 1rem;
+      margin: 1rem 20%;
+      border: solid $eerieBlack 0.2rem;
+      border-radius: 1rem;
+      background-color: $eerieBlack;
 
-  .descCont {
-    justify-content: space-between;
-    padding: 0 6rem;
+      .pokeImg {
+        justify-content: center;
+        align-items: center;
+        height: 11.7rem;
+        background-color: rgba(238, 244, 244, 0.2);
+        margin: 1rem;
+        border-radius: 1rem;
+      }
 
-    img {
-      cursor: pointer;
-    }
-  }
+      .descCont {
+        justify-content: space-between;
+        padding: 0 1rem;
+        color: $flashWhite;
+        letter-spacing: 0.3rem;
 
-  .buttonCont {
-    padding: 0 6rem;
+        .likeCont {
+          text-align: center;
 
-    button {
-      width: 100%;
-      cursor: pointer;
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .buttonCont {
+        padding: 0 1rem;
+
+        button {
+          width: 100%;
+          padding: 1rem 0;
+          font-size: 1.8rem;
+          font-family: $pocketMock;
+          background: none;
+          background-color: $desire;
+          border-radius: 1rem;
+          color: $flashWhite;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -123,4 +153,53 @@ a {
   bottom: 0;
   color: $flashWhite;
   border-top: 0.3rem solid $eerieBlack;
+}
+
+#cardPop {
+  border: solid $eerieBlack 0.2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+
+  .close {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+
+  .close button {
+    all: unset;
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: 3px solid #fff;
+  }
+
+  .img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 11.7rem;
+    background-color: rgba(238, 244, 244, 0.2);
+    margin: 1rem;
+    border-radius: 1rem;
+  }
+
+  .description {
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
 }
