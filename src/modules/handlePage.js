@@ -45,3 +45,5 @@ export const renderPokemon = async () => {
     container.appendChild(card);
   }
 };
+
+export default renderPokemon;
