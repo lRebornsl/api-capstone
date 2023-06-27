@@ -1,6 +1,8 @@
 import './index.scss';
-import header from './modules/header.js';
-import footer from './modules/footer.js';
+import { header, main, footer } from './modules/wholePage.js';
+import { renderPokemon } from './modules/handlePage.js';
 
 header();
+main();
+renderPokemon();
 footer();
