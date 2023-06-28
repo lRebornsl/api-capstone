@@ -56,7 +56,16 @@ a {
 
 .grid {
   display: grid;
-  grid: repeat(7, 1fr) / repeat(3, 1fr);
+}
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
 /* header */
@@ -95,6 +104,7 @@ a {
 .main {
   .container {
     padding: 8.8rem 0 6.4rem 0;
+    grid: repeat(7, 1fr) / repeat(3, 1fr);
 
     .card {
       padding-bottom: 1rem;
@@ -155,51 +165,48 @@ a {
   border-top: 0.3rem solid $eerieBlack;
 }
 
-#cardPop {
+/* Pop Up */
+.cardPop {
   border: solid $eerieBlack 0.2rem;
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  top: 24%;
+  bottom: 20%;
+  left: 20%;
+  right: 20%;
+  background-color: $eerieBlack;
+  color: $flashWhite;
+  padding: 1.6rem;
+  z-index: 2;
 
   .close {
-    width: 100%;
-    display: flex;
     justify-content: end;
+
+    .closeBtn {
+      all: unset;
+      font-size: 2.4rem;
+      cursor: pointer;
+    }
   }
 
-  .close button {
-    all: unset;
-    padding: 0.5rem;
-    font-size: 2rem;
-    border: 3px solid #fff;
-  }
-
-  .img {
-    width: 50%;
-    display: flex;
+  .popupPokeImg {
     justify-content: center;
-    align-items: center;
     height: 11.7rem;
     background-color: rgba(238, 244, 244, 0.2);
-    margin: 1rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
     border-radius: 1rem;
   }
 
+  h1 {
+    letter-spacing: 0.3rem;
+    padding-bottom: 1rem;
+  }
+
   .description {
-    margin: 3rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3rem;
+    grid: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 1rem;
+    text-align: start;
   }
 }
