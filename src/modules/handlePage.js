@@ -62,6 +62,8 @@ export const popupPokemon = (id) => {
   const ptItem = document.createElement('p');
   const pwItem = document.createElement('p');
   const phItem = document.createElement('p');
+  const divTitleCom = document.createElement('div');
+  const divComm = document.createElement('div');
   const blur = document.createElement('div');
 
   cardPop.id = id;
@@ -95,6 +97,14 @@ export const popupPokemon = (id) => {
   des.append(pwItem);
   des.append(phItem);
   cardPop.appendChild(des);
+
+  // Coments title and counter
+  divTitleCom.className = 'titleComment';
+  cardPop.appendChild(divTitleCom);
+
+  // display comments
+  divComm.className = 'comments';
+  cardPop.appendChild(divComm);
 
   blur.classList.add('blur');
   document.body.appendChild(blur);
