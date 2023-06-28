@@ -1,6 +1,54 @@
 import getPokemon from './crudPokeAPI.js';
 import heartIcon from '../assets/poke_heart_icon.png';
 
+export const popup = async (pokeData, pokeImg, pokeName) => {
+  let type = pokeData.data.types;
+  type = type.map((item) => item.type.name).join(', ');
+
+  const cardPop = document.createElement('div');
+  cardPop.id = 'cardPop';
+  document.body.appendChild(cardPop);
+
+  const divBut = document.createElement('div');
+  divBut.className = 'close';
+  cardPop.appendChild(divBut);
+  const butClose = document.createElement('button');
+  butClose.innerText = 'X';
+  butClose.addEventListener('click', () => {
+    const divClose = document.getElementById('cardPop');
+    divClose.remove();
+  });
+  divBut.appendChild(butClose);
+
+  const imgDiv = document.createElement('div');
+  imgDiv.className = 'img';
+  cardPop.appendChild(imgDiv);
+
+  const img = document.createElement('img');
+  img.src = pokeImg;
+  imgDiv.appendChild(img);
+
+  const text = document.createElement('h1');
+  text.textContent = `${pokeName}`;
+  cardPop.appendChild(text);
+
+  const des = document.createElement('div');
+  des.className = 'description';
+  let item = document.createElement('p');
+  item.textContent = `Base experience: ${pokeData.data.base_experience}`;
+  des.appendChild(item);
+  item = document.createElement('p');
+  item.textContent = `Pokemon type: ${type}`;
+  des.appendChild(item);
+  item = document.createElement('p');
+  item.textContent = `Pokemon weight: ${pokeData.data.weight}`;
+  des.appendChild(item);
+  item = document.createElement('p');
+  item.textContent = `Pokemon height: ${pokeData.data.height}`;
+  des.appendChild(item);
+  cardPop.appendChild(des);
+};
+
 export const renderPokemon = async () => {
   for (let i = 1; i <= 21; i += 1) {
     // eslint-disable-next-line
@@ -39,6 +87,9 @@ export const renderPokemon = async () => {
     // Create comment button
     buttonCont.classList.add('buttonCont');
     commentButton.innerText = 'Comment';
+    commentButton.addEventListener('click', () => {
+      popup(pokeData, pokeImg, pokeName);
+    });
     buttonCont.append(commentButton);
     card.append(buttonCont);
 
