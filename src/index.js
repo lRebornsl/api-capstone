@@ -31,5 +31,7 @@ likeBtn.forEach((item) => {
   item.addEventListener('click', () => {
     const { id } = item.parentElement.parentElement.parentElement;
     postPokemonLikeId(id);
+    // eslint-disable-next-line
+    setTimeout(() => location.reload(), 250);
   });
 });
