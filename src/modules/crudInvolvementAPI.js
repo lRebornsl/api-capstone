@@ -15,6 +15,13 @@ export const postPokemonComment = (id, username, comment) => {
 
 export const getPokemonComment = (id) => {
   const urlCommentsGET = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=item${id}`;
-  const results = axios.get(urlCommentsGET);
+  const results = axios.get(urlCommentsGET)
+    .catch((error) => {
+      if (error.response) {
+        const arr = { data: [{ comment: '', creation_date: '', username: 'whitout comments ' }] };
+        return arr;
+      }
+      return null;
+    });
   return results;
 };
