@@ -68,6 +68,14 @@ export const popupPokemon = (id) => {
   const phItem = document.createElement('p');
   const divTitleCom = document.createElement('div');
   const divComm = document.createElement('div');
+  const formDiv = document.createElement('div');
+  const form = document.createElement('form');
+  const formTitle = document.createElement('h3');
+  const userInput = document.createElement('input');
+  const commInput = document.createElement('textarea');
+  const br1 = document.createElement('br');
+  const br2 = document.createElement('br');
+  const subInput = document.createElement('input');
   const blur = document.createElement('div');
 
   cardPop.id = id;
@@ -109,6 +117,23 @@ export const popupPokemon = (id) => {
   // display comments
   divComm.className = 'comments';
   cardPop.appendChild(divComm);
+
+  // comments form
+  formDiv.className = 'formContainer';
+  form.className = 'form';
+  formTitle.textContent = 'Add a comment';
+  userInput.placeholder = 'Your name';
+  userInput.className = 'user';
+  userInput.required = 'true';
+  commInput.placeholder = 'Your insights';
+  commInput.className = 'comment';
+  commInput.required = 'true';
+  subInput.className = 'submit';
+  subInput.type = 'submit';
+  subInput.value = ' Comment ';
+  form.append(formTitle, userInput, br1, commInput, br2, subInput);
+  formDiv.appendChild(form);
+  cardPop.appendChild(formDiv);
 
   blur.classList.add('blur');
   document.body.appendChild(blur);

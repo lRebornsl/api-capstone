@@ -1,4 +1,4 @@
-import { getPokemonComment, getPokemonLikeId } from './crudInvolvementAPI.js';
+import { getPokemonComment, getPokemonLikeId, postPokemonComment } from './crudInvolvementAPI.js';
 import getPokemon from './crudPokeAPI.js';
 
 export const addPokeImg = () => {
@@ -73,4 +73,13 @@ export const addPokeLike = async () => {
       }
     });
   });
+};
+
+export const addPokeComment = () => {
+  const item1 = document.querySelector('.user');
+  const item2 = document.querySelector('.comment');
+  const { id } = item1.parentElement.parentElement.parentElement;
+  const name = item1.value;
+  const comm = item2.value;
+  postPokemonComment(id, name, comm);
 };
