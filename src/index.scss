@@ -222,26 +222,23 @@ a {
     border-bottom: 5px outset #fff;
   }
 
-  .form {
-    text-align: start;
-    padding: 2rem;
-  }
-
   h3 {
     text-align: center;
     padding: 1rem;
   }
 
   .form {
+    text-align: start;
+    padding: 2rem;
+
     input {
       margin: 1rem;
     }
+
     textarea {
       width: 90%;
       height: 6rem;
       margin: 1rem;
     }
-  } 
-    
-
+  }
 }
