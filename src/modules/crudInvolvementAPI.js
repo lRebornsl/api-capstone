@@ -20,8 +20,8 @@ export const getPokemonLikeId = async () => {
   return results.data;
 };
 
-export const postPokemonComment = (id, username, comment) => {
-  axios.post(urlCommentsPOST, { item_id: id, username, comment });
+export const postPokemonComment = (id, user, comm) => {
+  axios.post(urlCommentsPOST, { item_id: id, username: user, comment: comm });
 };
 
 export const getPokemonComment = (id) => {

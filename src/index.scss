@@ -167,6 +167,7 @@ a {
 
 /* Pop Up */
 .cardPop {
+  overflow: auto;
   border: solid $eerieBlack 0.2rem;
   border-radius: 1rem;
   text-align: center;
@@ -220,4 +221,27 @@ a {
     padding: 2rem;
     border-bottom: 5px outset #fff;
   }
+
+  .form {
+    text-align: start;
+    padding: 2rem;
+  }
+
+  h3 {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .form {
+    input {
+      margin: 1rem;
+    }
+    textarea {
+      width: 90%;
+      height: 6rem;
+      margin: 1rem;
+    }
+  } 
+    
+
 }
