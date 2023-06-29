@@ -205,8 +205,19 @@ a {
   }
 
   .description {
+    padding-bottom: 2rem;
     grid: repeat(2, 1fr) / repeat(2, 1fr);
     gap: 1rem;
     text-align: start;
+  }
+
+  .titleComment {
+    padding: 2rem;
+    border-top: 5px outset #fff;
+  }
+
+  .comments {
+    padding: 2rem;
+    border-bottom: 5px outset #fff;
   }
 }
