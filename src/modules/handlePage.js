@@ -1,5 +1,7 @@
 import heartIcon from '../assets/poke_heart_icon.png';
-import { addPokeImg, addPokeName, addPopupPokeData } from './handlePokeAPI.js';
+import {
+  addPokeImg, addPokeName, addPopupPokeData, addPopupPokeComment, addPokeLike,
+} from './handlePokeAPI.js';
 
 export const renderPokemon = () => {
   for (let i = 1; i <= 21; i += 1) {
@@ -31,6 +33,7 @@ export const renderPokemon = () => {
     likeImg.classList.add('likeBtn');
     likeImg.src = heartIcon;
     likeCont.append(likeImg);
+    likeCount.classList.add('likeCount');
     likeCount.innerText = '0';
     likeCont.append(likeCount);
     descCont.append(likeCont);
@@ -45,6 +48,7 @@ export const renderPokemon = () => {
 
     container.appendChild(card);
   }
+  addPokeLike();
   addPokeImg();
   addPokeName();
 };
@@ -110,4 +114,5 @@ export const popupPokemon = (id) => {
   document.body.appendChild(blur);
 
   addPopupPokeData();
+  addPopupPokeComment();
 };
