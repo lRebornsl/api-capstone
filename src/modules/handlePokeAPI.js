@@ -1,5 +1,6 @@
 import { getPokemonComment, getPokemonLikeId, postPokemonComment } from './crudInvolvementAPI.js';
 import getPokemon from './crudPokeAPI.js';
+import counterModule from './counterComm.js';
 
 export const addPokeImg = () => {
   const pokeImg = document.querySelectorAll('.img');
@@ -53,14 +54,16 @@ export const addPopupPokeComment = async () => {
   const { id } = titleCounter.parentElement.parentElement;
   const userdata = await getPokemonComment(id);
   const arrComments = userdata.data;
-  const numComments = userdata.data.length;
 
-  titleCounter.innerHTML = `Comments ( ${numComments} )`;
   arrComments.forEach((e) => {
     const comment = document.createElement('p');
+    comment.classList = 'userCom';
     comment.textContent = `${e.creation_date} - ${e.username}: ${e.comment}`;
     comments.appendChild(comment);
   });
+
+  const counter = counterModule(arrComments[0].username);
+  titleCounter.innerHTML = `Comments ( ${counter} )`;
 };
 
 export const addPokeLike = async () => {

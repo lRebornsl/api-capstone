@@ -133,7 +133,7 @@ export const popupPokemon = (id) => {
   userInput.className = 'user';
   userInput.required = 'true';
   commInput.placeholder = 'Your insights';
-  commInput.className = 'comment';
+  commInput.className = 'commentUser';
   commInput.required = 'true';
   subInput.className = 'submit';
   subInput.type = 'submit';
