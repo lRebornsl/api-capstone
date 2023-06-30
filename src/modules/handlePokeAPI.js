@@ -80,11 +80,39 @@ export const addPokeLike = async () => {
   });
 };
 
-export const addPokeComment = () => {
+export const addPokeComment = async () => {
+  const form = document.querySelector('.form');
   const item1 = document.querySelector('.user');
-  const item2 = document.querySelector('.comment');
+  const item2 = document.querySelector('.commentUser');
+  const comments = document.querySelector('.comments');
+  const oldTitle = document.querySelector('.titleComment');
+  const olddata = document.querySelectorAll('.userCom');
   const { id } = item1.parentElement.parentElement.parentElement;
   const name = item1.value;
   const comm = item2.value;
+  form.reset();
   postPokemonComment(id, name, comm);
+
+  oldTitle.textContent = '';
+
+  olddata.forEach((item) => {
+    item.remove();
+  });
+
+  const userdata = await getPokemonComment(id);
+  const arrComments = userdata.data;
+  arrComments.forEach((e) => {
+    const comment = document.createElement('p');
+    comment.classList = 'userCom';
+    comment.textContent = `${e.creation_date} - ${e.username}: ${e.comment}`;
+    comments.appendChild(comment);
+  });
+
+  const comment = document.createElement('p');
+  comment.classList = 'userCom';
+  comment.textContent = `Added recently - ${name}: ${comm}`;
+  comments.appendChild(comment);
+
+  const counter = counterModule(arrComments[0].username);
+  oldTitle.innerHTML = `Comments ( ${counter} )`;
 };
