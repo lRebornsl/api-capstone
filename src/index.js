@@ -4,10 +4,12 @@ import { renderPokemon, popupPokemon } from './modules/handlePage.js';
 import { postPokemonLikeId } from './modules/crudInvolvementAPI.js';
 import { addPokeComment } from './modules/handlePokeAPI.js';
 import counterLikes from './modules/counterLikes.js';
+import counterItems from './modules/counterItems.js';
 
 header();
 main();
 renderPokemon();
+counterItems();
 footer();
 
 const commentBtn = document.querySelectorAll('.commentBtn');
