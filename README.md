@@ -39,6 +39,12 @@
 
 This project is the final project for the module 2, it was created for test habilities html, scss, js, js modules and test with jest. 
 
+# 🎞 Video presentation 
+
+You can see a little presentation of our project in this link
+
+https://drive.google.com/file/d/1cbIEmgWiqHJEKHZBd6h1UdkO_v6LEBji/view?usp=sharing
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -130,7 +136,9 @@ To run tests, run the following command:
 
 ### Deployment
 
-comming soon..
+You can check the project deploy in this link 
+
+https://lrebornsl.github.io/api-capstone/dist/ 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
