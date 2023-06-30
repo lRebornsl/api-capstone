@@ -1,8 +1,7 @@
 const axios = require('axios').default;
 
-const appId = '19ZJvuqHVwq8iUHpGDJZ';
-const urlLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
-const urlCommentsPOST = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments`;
+const urlLikes = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/19ZJvuqHVwq8iUHpGDJZ/likes';
+const urlCommentsPOST = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/19ZJvuqHVwq8iUHpGDJZ/comments';
 
 export const postPokemonLikeId = async (id) => {
   await axios.post(urlLikes, { item_id: id });
@@ -25,7 +24,7 @@ export const postPokemonComment = (id, user, comm) => {
 };
 
 export const getPokemonComment = (id) => {
-  const urlCommentsGET = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${id}`;
+  const urlCommentsGET = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/19ZJvuqHVwq8iUHpGDJZ/comments?item_id=${id}`;
   const results = axios.get(urlCommentsGET)
     .catch((error) => {
       if (error.response) {
