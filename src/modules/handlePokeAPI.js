@@ -30,7 +30,7 @@ export const addPopupPokeData = async () => {
   const ptItem = document.querySelector('.ptItem');
   const pwItem = document.querySelector('.pwItem');
   const phItem = document.querySelector('.phItem');
-  const { id } = popupImg.parentElement.parentElement;
+  const { id } = popupImg.parentElement.parentElement.parentElement;
   const pokeData = await getPokemon(id);
   const pokeImg = pokeData.data.sprites.versions['generation-v']['black-white'].animated.front_default;
   const pokeName = pokeData.data.name[0].toUpperCase() + pokeData.data.name.substring(1);
@@ -50,7 +50,7 @@ export const addPopupPokeData = async () => {
 export const addPopupPokeComment = async () => {
   const titleCounter = document.querySelector('.titleComment');
   const comments = document.querySelector('.comments');
-  const { id } = titleCounter.parentElement;
+  const { id } = titleCounter.parentElement.parentElement;
   const userdata = await getPokemonComment(id);
   const arrComments = userdata.data;
   const numComments = userdata.data.length;
@@ -66,9 +66,11 @@ export const addPopupPokeComment = async () => {
 export const addPokeLike = async () => {
   const likeCount = document.querySelectorAll('.likeCount');
   const likeData = await getPokemonLikeId();
-  likeData.forEach((itemData) => {
+  const likeDataSort = likeData.sort((a, b) => a.item_id - b.item_id);
+  likeDataSort.forEach((itemData) => {
     likeCount.forEach((itemCount, indexCount) => {
-      if (itemData.item_id === (indexCount + 1).toString()) {
+      const iCount = indexCount + 1;
+      if (itemData.item_id === iCount.toString()) {
         itemCount.innerText = itemData.likes;
       }
     });

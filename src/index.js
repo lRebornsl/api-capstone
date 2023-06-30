@@ -3,6 +3,7 @@ import { header, main, footer } from './modules/wholePage.js';
 import { renderPokemon, popupPokemon } from './modules/handlePage.js';
 import { postPokemonLikeId } from './modules/crudInvolvementAPI.js';
 import { addPokeComment } from './modules/handlePokeAPI.js';
+import counterLikes from './modules/counterLikes.js';
 
 header();
 main();
@@ -27,7 +28,8 @@ commentBtn.forEach((item) => {
       blur.remove();
     });
 
-    commButton.addEventListener('click', () => {
+    commButton.addEventListener('click', (e) => {
+      e.preventDefault();
       addPokeComment();
     });
   });
@@ -37,7 +39,6 @@ likeBtn.forEach((item) => {
   item.addEventListener('click', () => {
     const { id } = item.parentElement.parentElement.parentElement;
     postPokemonLikeId(id);
-    // eslint-disable-next-line
-    setTimeout(() => location.reload(), 250);
+    counterLikes(id);
   });
 });

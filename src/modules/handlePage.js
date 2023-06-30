@@ -60,7 +60,9 @@ export const popupPokemon = (id) => {
   const imgDiv = document.createElement('div');
   const img = document.createElement('img');
   const nameCont = document.createElement('div');
-  const text = document.createElement('h1');
+  const pokeInfo = document.createElement('div');
+  const pokeComments = document.createElement('div');
+  const text = document.createElement('h2');
   const des = document.createElement('div');
   const beItem = document.createElement('p');
   const ptItem = document.createElement('p');
@@ -82,14 +84,16 @@ export const popupPokemon = (id) => {
   cardPop.classList.add('cardPop');
   document.body.appendChild(cardPop);
 
+  pokeInfo.classList.add('pokeInfo');
+
   divBut.classList.add('close', 'flex');
-  cardPop.appendChild(divBut);
+  pokeInfo.appendChild(divBut);
   butClose.classList.add('closeBtn');
   butClose.innerText = 'X';
   divBut.appendChild(butClose);
 
   imgDiv.classList.add('popupPokeImg', 'flex');
-  cardPop.appendChild(imgDiv);
+  pokeInfo.appendChild(imgDiv);
   img.classList.add('popupImg');
 
   imgDiv.appendChild(img);
@@ -97,7 +101,7 @@ export const popupPokemon = (id) => {
   nameCont.classList.add('nameCont');
   text.classList.add('popupName');
   nameCont.append(text);
-  cardPop.appendChild(nameCont);
+  pokeInfo.appendChild(nameCont);
 
   des.classList.add('description', 'grid');
   beItem.classList.add('beItem');
@@ -108,18 +112,21 @@ export const popupPokemon = (id) => {
   des.append(ptItem);
   des.append(pwItem);
   des.append(phItem);
-  cardPop.appendChild(des);
+  pokeInfo.appendChild(des);
+  cardPop.appendChild(pokeInfo);
 
   // Coments title and counter
+  pokeComments.classList.add('pokeComments');
   divTitleCom.className = 'titleComment';
-  cardPop.appendChild(divTitleCom);
+  pokeComments.appendChild(divTitleCom);
 
   // display comments
   divComm.className = 'comments';
-  cardPop.appendChild(divComm);
+  pokeComments.appendChild(divComm);
+  cardPop.appendChild(pokeComments);
 
   // comments form
-  formDiv.className = 'formContainer';
+  formDiv.className = 'pokeForm';
   form.className = 'form';
   formTitle.textContent = 'Add a comment';
   userInput.placeholder = 'Your name';
